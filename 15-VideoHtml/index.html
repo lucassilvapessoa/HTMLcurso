@@ -1,0 +1,117 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <video id="video" controls muted>
+                 <source src="at.mp4" type="video/mp4">
+                    
+            <track default 
+            src="./ac.vtt" 
+            kind="captions" 
+            srclang="en"
+            label="English Captions"/>
+                
+            </video>
+        <button id="btnPlay" class="control">Play</button><br/>
+        <button id="btnPaws" class="control">Pause</button><br/>
+        <button id="btnStop" class="control">Stop</button><br/>
+        <button id="btnRew" class="control">Rewind</button><br/>
+        <button id="btnFF" class="control">Fast-forward</button><br/>
+        </main>
+        <script>
+            let video
+        document.addEventListener('DOMContentLoaded',init)
+        function init(){
+            video = document.getElementById('video')
+            console.log({video})
+           document.getElementById('btnPlay').addEventListener('click',play)
+           document.getElementById('btnPaws').addEventListener('click',pause)
+        }
+        function play(ev){
+            video.play()
+            .then(()=>{
+                console.log('video is playing')
+            })
+            .catch((err)=>{
+                console.log( {err} );
+            });
+            //after the video starts to play you can access text tracks
+            console.log("fsfs")
+            let tt = video.textTracks;
+            console.log(tt)
+            let cues = tt[0].cues;
+            console.log(tt);
+            console.log(`There are ${tt.length} text tracks`);
+            console.log( tt[0] );
+            console.log( cues );
+            console.log( cues.length );
+            console.log( cues[0] );
+            console.log( cues[0].text );
+        }
+        function paws(ev){
+            video.pause();
+            console.log( vid.currentTime, "of", vid.duration, "seconds played");
+            console.log('video is paused. No Promise here');
+        }
+        function stop(ev){
+            video.pause();
+            console.log( vid.currentTime);
+            vid.currentTime = 0;
+        }
+        function rew(ev){
+            console.log( video.currentTime);
+            if( ! video.fastSeek ){
+                vid.currentTime -= 20;
+            }else{
+                video.fastSeek(-20)
+                .then(()=>{
+                    console.log('Video skipped forward 10 seconds')
+                })
+                .catch(err=>{
+                    console.log({err});
+                })
+            }
+            console.log( video.currentTime);
+        }
+        function ff(ev){
+            console.log( video.currentTime);
+            if( ! video.fastSeek ){
+                video.currentTime += 20;
+            }else{
+                video.fastSeek(20)
+                .then(()=>{
+                    console.log('Video skipped forward 10 seconds')
+                })
+                .catch(err=>{
+                    console.log({err});
+                })
+            }
+            console.log(video.currentTime);
+        }     function play(ev){
+            video.play()
+            .then(()=>{
+                console.log('video is playing')
+            })
+            .catch((err)=>{
+                console.log( {err} );
+            });
+            let tt = video.textTracks;
+            console.log(tt)
+        }
+        function pause (ev){
+            video.pause()
+            console.log(video.currentTime , video.duration)
+            console.log('Video pausado')
+        }
+        
+    
+
+        </script> 
+
+    </body>
+    </html>

@@ -1,0 +1,55 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <main>
+            <h1>HTML dropdown lists and DataLists</h1>
+            <p class="form-box"> 
+        <label for="region" title="State or Territory">Region</label>
+                <select id="region" name="region">
+                    <optgroup label="States">
+                        <option value="new-south-wales">new-south-wales</option>
+                        <option value="queensland">queensland</option>
+                        <option value="tasmania">tasmania</option>
+                        <option value="victoria">victoria</option>
+                        <option value="western-austria">western-austria</option>
+                    </optgroup>
+                    <optgroup label="Territories">
+                    <option value="ashmore-cartier-islands">Ashmore ashmore-cartier-islands</option>
+                        <option value="australian-capital-territory">australian-capital-territory</option>
+                        <option value="chirsmans-islands">chirsmans-islands</option>
+                        <option value="cocos-keeling-islands">Cocos(Keeling)</option>
+                        <option value="coral-sea-islands">Coral Sea Islands</option>
+                        <option value="heard-insland-mcdonald-insland">Heard island and macdonald island</option>
+                        <option value="jervin-bay-territory"> Jervis bay Territory</option>
+                        <option value="norfolk-territory"> norfolk-territory</option>
+                        <option value="northen-territory"> northen-territory</option>
+                    </optgroup>   
+                </select>
+            </p>
+            <p class="form-box">
+                <label for="city">City</label>
+                <input id="city" name="city" list="cities"/>
+                <p class="form-box">
+                    <button id="btnSend"> Click Me</button>
+                </p>
+            </p>
+            
+            <datalist id="cities">
+                <option value="Adelade"> </option>
+                <option value="Brisbane"> </option>
+                <option value="Melbourne"> </option>
+                <option value="Canberra"> </option>
+                <option value="Darwin"> </option>
+                <option value="Hobart"> </option>
+                <option value="Perth"> </option>
+                <option value="Sydney"> </option>
+            </datalist>
+        </main>
+        
+    </body>
+    </html>

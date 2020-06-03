@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS &amp; HTML Quotation Marks</title>
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="main.css"/>
+    <style>
+        q{
+            quotes: "\201E" "\201D" "«" "»"; 
+        }
+        q::before{
+            content: open-quote;
+        }
+        q::after{
+            content: close-quote;
+        }
+        
+        .qt{
+            quotes: "“" "\201D"
+        }
+        .qt::before{
+            content: open-quote;
+        }
+        .qt::after{
+            content: close-quote;
+        }
+        
+        p:not(.qt){
+            font-family: serif;
+        }
+        p[lang]::before{
+            content: open-quote;
+        }
+        p[lang]::after{
+            content: close-quote;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>CSS &amp; HTML Quotation Marks</h1>
+    </header>
+    <main>
+        <p><q>This <q>is</q> a quote</q></p>
+        <p class="qt">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis, excepturi odio deleniti quibusdam, qui fuga porro in id! Illo ab voluptas, delectus necessitatibus laboriosam accusantium explicabo quia facere placeat, dolores.</p>
+        <p lang="en-CA">Voluptate repudiandae dolor ipsam doloribus laboriosam ea magnam, illum sit architecto alias atque distinctio. Excepturi nihil quis, delectus perferendis, veritatis magni nemo hic eligendi, laborum sit officia quasi nisi voluptatum?</p>
+        <p lang="fr">Voluptate repudiandae dolor ipsam doloribus laboriosam ea magnam, illum sit architecto alias atque distinctio. Excepturi nihil quis, delectus perferendis, veritatis magni nemo hic eligendi, laborum sit officia quasi nisi voluptatum?</p>
+        <ul>
+            <li>&lsquo; lsquo \2018</li>
+            <li>&rsquo; rsquo \2019</li>
+            <li>&ldquo; ldquo \201C</li>
+            <li>&rdquo; rdquo \201D</li>
+            <li>&sbquo; sbquo \201A</li>
+            <li>&bdquo; bdquo \201E</li>
+            <li>&laquo; laquo \00AB</li>
+            <li>&raquo; raquo \00BB</li>
+            <li>&lang; lang \2039</li>
+            <li>&rang; rang \203A</li>
+            
+            <li>&quot; quot </li>
+            <li>&apos; apos </li>
+        </ul>
+    </main>    
+    
+</body>
+</html>
